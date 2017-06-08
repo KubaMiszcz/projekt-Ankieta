@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static Survey.SharedObjectsClass;
+
+namespace Survey
+{
+	class SurveyClass
+	{
+		public String Author;
+		public String SurveyDescription;
+		public List<QuestionClass> QuestionList;
+		public SurveyClass() {
+			Author = "";
+			SurveyDescription = "";
+			QuestionList = new List<QuestionClass>();
+		}
+
+		public void AddQuestion(QuestionType type, String content, Byte answer)
+		{
+			QuestionClass q = new QuestionClass(type, content, answer);
+			QuestionList.Add(q);
+		}
+
+	}
+}

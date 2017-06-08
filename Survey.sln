@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ankieta", "Ankieta\Ankieta.csproj", "{E68E0FE8-4AE5-4CDE-8D03-2A6BD915BA39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyEditor", "SurveyEditor\SurveyEditor.csproj", "{E68E0FE8-4AE5-4CDE-8D03-2A6BD915BA39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyClient", "SurveyClient\SurveyClient.csproj", "{C4761AED-4EBC-444B-8ADC-7685A5FF935C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E68E0FE8-4AE5-4CDE-8D03-2A6BD915BA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E68E0FE8-4AE5-4CDE-8D03-2A6BD915BA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E68E0FE8-4AE5-4CDE-8D03-2A6BD915BA39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4761AED-4EBC-444B-8ADC-7685A5FF935C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4761AED-4EBC-444B-8ADC-7685A5FF935C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4761AED-4EBC-444B-8ADC-7685A5FF935C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4761AED-4EBC-444B-8ADC-7685A5FF935C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

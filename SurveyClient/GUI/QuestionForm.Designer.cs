@@ -39,7 +39,7 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,11 +55,13 @@
 			this.loginToDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.qYesNo1 = new SurveyClient.QYesNo();
 			this.gbQuestion.SuspendLayout();
 			this.panelQuestion.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-			this.menuStrip2.SuspendLayout();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gbQuestion
@@ -170,16 +172,16 @@
 			this.label7.TabIndex = 3;
 			this.label7.Text = "Total Questions:";
 			// 
-			// menuStrip2
+			// menuStrip1
 			// 
-			this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.settingsToolStripMenuItem});
-			this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip2.Name = "menuStrip2";
-			this.menuStrip2.Size = new System.Drawing.Size(585, 24);
-			this.menuStrip2.TabIndex = 10;
-			this.menuStrip2.Text = "menuStrip2";
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Size = new System.Drawing.Size(585, 24);
+			this.menuStrip1.TabIndex = 10;
+			this.menuStrip1.Text = "menuStrip2";
 			// 
 			// fileToolStripMenuItem
 			// 
@@ -203,7 +205,7 @@
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
 			this.openToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.openToolStripMenuItem.Text = "Open...";
-			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+			this.openToolStripMenuItem.Click += new System.EventHandler(this.otworzToolStripMenuItem_Click);
 			// 
 			// saveToolStripMenuItem
 			// 
@@ -273,7 +275,7 @@
 			// 
 			// button4
 			// 
-			this.button4.BackgroundImage = global::AnkietaKlient.Properties.Resources.Button_Next_icon;
+			this.button4.BackgroundImage = global::SurveyClient.Properties.Resources.Button_Next_icon;
 			this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.button4.Location = new System.Drawing.Point(428, 326);
@@ -284,7 +286,7 @@
 			// 
 			// button3
 			// 
-			this.button3.BackgroundImage = global::AnkietaKlient.Properties.Resources.Button_Previous_icon;
+			this.button3.BackgroundImage = global::SurveyClient.Properties.Resources.Button_Previous_icon;
 			this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.button3.Location = new System.Drawing.Point(11, 326);
@@ -292,6 +294,10 @@
 			this.button3.Size = new System.Drawing.Size(149, 71);
 			this.button3.TabIndex = 0;
 			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
 			// qYesNo1
 			// 
@@ -306,7 +312,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(585, 404);
-			this.Controls.Add(this.menuStrip2);
+			this.Controls.Add(this.menuStrip1);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
@@ -321,8 +327,8 @@
 			this.gbQuestion.PerformLayout();
 			this.panelQuestion.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-			this.menuStrip2.ResumeLayout(false);
-			this.menuStrip2.PerformLayout();
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -341,7 +347,7 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.MenuStrip menuStrip2;
+		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -356,6 +362,8 @@
 		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem loginToDatabaseToolStripMenuItem;
 		private System.Windows.Forms.Panel panelQuestion;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private QYesNo qYesNo1;
 	}
 }

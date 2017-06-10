@@ -51,6 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\SharedObjectsClass.cs" />
+    <Compile Include="GUI\HelpersIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QuestionControls\MySlider.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,9 +159,7 @@
       <Name>SurveyEditor</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Button-Previous-icon.png" />
   </ItemGroup>

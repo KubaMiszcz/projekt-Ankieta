@@ -7,8 +7,8 @@
     <ProjectGuid>{C4761AED-4EBC-444B-8ADC-7685A5FF935C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnkietaKlient</RootNamespace>
-    <AssemblyName>AnkietaKlient</AssemblyName>
+    <RootNamespace>SurveyClient</RootNamespace>
+    <AssemblyName>SurveyClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,43 +51,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MySlider.cs">
+    <Compile Include="QuestionControls\MySlider.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MySlider.Designer.cs">
+    <Compile Include="QuestionControls\MySlider.Designer.cs">
       <DependentUpon>MySlider.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartForm.cs">
+    <Compile Include="QuestionControls\Q1to5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionControls\Q1to5.Designer.cs">
+      <DependentUpon>Q1to5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionControls\QYesNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionControls\QYesNo.Designer.cs">
+      <DependentUpon>QYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionControls\QYesNoDontKnow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionControls\QYesNoDontKnow.Designer.cs">
+      <DependentUpon>QYesNoDontKnow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm.Designer.cs">
+    <Compile Include="GUI\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NoYesForm.cs">
+    <Compile Include="GUI\QuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NoYesForm.Designer.cs">
-      <DependentUpon>NoYesForm.cs</DependentUpon>
+    <Compile Include="GUI\QuestionForm.Designer.cs">
+      <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl2.cs">
+    <Compile Include="QuestionControls\Q1to10.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <Compile Include="QuestionControls\Q1to10.Designer.cs">
+      <DependentUpon>Q1to10.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.cs">
+    <Compile Include="QuestionControls\Q1to3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="QuestionControls\Q1to3.Designer.cs">
+      <DependentUpon>Q1to3.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MySlider.resx">
+    <EmbeddedResource Include="QuestionControls\MySlider.resx">
       <DependentUpon>MySlider.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NoYesForm.resx">
-      <DependentUpon>NoYesForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QuestionForm.resx">
+      <DependentUpon>QuestionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,16 +115,27 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StartForm.resx">
+    <EmbeddedResource Include="QuestionControls\Q1to5.resx">
+      <DependentUpon>Q1to5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionControls\QYesNo.resx">
+      <DependentUpon>QYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionControls\QYesNoDontKnow.resx">
+      <DependentUpon>QYesNoDontKnow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="QuestionControls\Q1to10.resx">
+      <DependentUpon>Q1to10.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="QuestionControls\Q1to3.resx">
+      <DependentUpon>Q1to3.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,6 +154,15 @@
       <Project>{e68e0fe8-4ae5-4cde-8d03-2a6bd915ba39}</Project>
       <Name>SurveyEditor</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Previous-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Next-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

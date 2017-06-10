@@ -18,7 +18,7 @@ using System.Windows.Forms.VisualStyles;
 
 
 
-namespace Survey
+namespace SurveyEditor
 {
 	public partial class QuestionEditForm : Form
 	{
@@ -77,7 +77,6 @@ namespace Survey
 
 			this.Text = _title + " - " + _currentSavedFileName;
 		}
-
 		private void otworzToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 
@@ -110,10 +109,10 @@ namespace Survey
 
 							curIdx = 0;
 							int i = 1;
-							cbQuestionList.Items.Clear();
+							cbQuestionNumberDropDownList.Items.Clear();
 							foreach (var q in _curQuestionList)
 							{
-								cbQuestionList.Items.Add(i);
+								cbQuestionNumberDropDownList.Items.Add(i);
 								i++;
 							}
 							UpdateForm();
@@ -129,15 +128,10 @@ namespace Survey
 					MessageBox.Show(ex.Message + ex.StackTrace);
 				}
 			}
-
 		}
-
-
-
 		private void closeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
-
 	}
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Survey
+namespace SurveyEditor
 {
-	class SharedObjectsClass
+	public class SharedObjectsClass
 	{
 		public static SurveyClass MySurvey;
 		public enum QuestionType
@@ -17,6 +18,10 @@ namespace Survey
 			Num1To5,
 			Num1To10,
 			Num1To100,
+		}
+		public static void ShowSomeday()
+		{
+			MessageBox.Show("Someday...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 	}
 }

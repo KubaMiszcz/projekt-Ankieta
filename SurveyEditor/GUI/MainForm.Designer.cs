@@ -1,4 +1,4 @@
-﻿namespace Survey
+﻿namespace SurveyEditor
 {
 	partial class MainForm
 	{

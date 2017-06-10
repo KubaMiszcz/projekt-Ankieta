@@ -1,4 +1,4 @@
-﻿namespace Survey
+﻿namespace SurveyEditor
 {
     partial class QuestionEditForm
     {
@@ -35,14 +35,19 @@
 			this.menuStrip2 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.NewStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.importFromtxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exporttxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.importFromDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.exportToDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+			this.loginToDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.gbQuestionKind = new System.Windows.Forms.GroupBox();
 			this.rb1to100 = new System.Windows.Forms.RadioButton();
@@ -53,7 +58,7 @@
 			this.rbNoYes = new System.Windows.Forms.RadioButton();
 			this.lbTotalQuestions = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.cbQuestionList = new System.Windows.Forms.ComboBox();
+			this.cbQuestionNumberDropDownList = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.btnPrevQuestion = new System.Windows.Forms.Button();
@@ -69,9 +74,6 @@
 			this.rtbSubject = new System.Windows.Forms.RichTextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.trackBar1 = new System.Windows.Forms.TrackBar();
-			this.exporttxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exportToDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip2.SuspendLayout();
 			this.gbQuestionKind.SuspendLayout();
@@ -116,13 +118,16 @@
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewStripMenuItem2,
+            this.toolStripSeparator4,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.exporttxtToolStripMenuItem,
-            this.exportToDatabaseToolStripMenuItem,
             this.toolStripSeparator3,
+            this.importFromtxtToolStripMenuItem,
+            this.exporttxtToolStripMenuItem,
+            this.importFromDatabaseToolStripMenuItem,
+            this.exportToDatabaseToolStripMenuItem,
+            this.toolStripSeparator5,
             this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -131,61 +136,93 @@
 			// NewStripMenuItem2
 			// 
 			this.NewStripMenuItem2.Name = "NewStripMenuItem2";
-			this.NewStripMenuItem2.Size = new System.Drawing.Size(172, 22);
+			this.NewStripMenuItem2.Size = new System.Drawing.Size(190, 22);
 			this.NewStripMenuItem2.Text = "New";
 			this.NewStripMenuItem2.Click += new System.EventHandler(this.NewStripMenuItem2_Click);
+			// 
+			// toolStripSeparator4
+			// 
+			this.toolStripSeparator4.Name = "toolStripSeparator4";
+			this.toolStripSeparator4.Size = new System.Drawing.Size(187, 6);
 			// 
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.openToolStripMenuItem.Text = "Open...";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.otworzToolStripMenuItem_Click);
 			// 
 			// saveToolStripMenuItem
 			// 
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.saveToolStripMenuItem.Text = "Save";
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.zapiszToolStripMenuItem_Click);
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.saveAsToolStripMenuItem.Text = "Save As...";
 			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.zapiszJakoToolStripMenuItem_Click);
 			// 
-			// toolStripSeparator2
+			// toolStripSeparator3
 			// 
-			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(169, 6);
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(187, 6);
+			// 
+			// importFromtxtToolStripMenuItem
+			// 
+			this.importFromtxtToolStripMenuItem.Name = "importFromtxtToolStripMenuItem";
+			this.importFromtxtToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+			this.importFromtxtToolStripMenuItem.Text = "Import from *.txt";
+			this.importFromtxtToolStripMenuItem.Click += new System.EventHandler(this.importFromtxtToolStripMenuItem_Click);
+			// 
+			// exporttxtToolStripMenuItem
+			// 
+			this.exporttxtToolStripMenuItem.Name = "exporttxtToolStripMenuItem";
+			this.exporttxtToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+			this.exporttxtToolStripMenuItem.Text = "Export to *.txt";
+			this.exporttxtToolStripMenuItem.Click += new System.EventHandler(this.exporttxtToolStripMenuItem_Click);
+			// 
+			// importFromDatabaseToolStripMenuItem
+			// 
+			this.importFromDatabaseToolStripMenuItem.Name = "importFromDatabaseToolStripMenuItem";
+			this.importFromDatabaseToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+			this.importFromDatabaseToolStripMenuItem.Text = "Import from Database";
+			this.importFromDatabaseToolStripMenuItem.Click += new System.EventHandler(this.importFromDatabaseToolStripMenuItem_Click);
+			// 
+			// exportToDatabaseToolStripMenuItem
+			// 
+			this.exportToDatabaseToolStripMenuItem.Name = "exportToDatabaseToolStripMenuItem";
+			this.exportToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+			this.exportToDatabaseToolStripMenuItem.Text = "Export to Database";
+			this.exportToDatabaseToolStripMenuItem.Click += new System.EventHandler(this.exportToDatabaseToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator5
+			// 
+			this.toolStripSeparator5.Name = "toolStripSeparator5";
+			this.toolStripSeparator5.Size = new System.Drawing.Size(187, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			// 
 			// settingsToolStripMenuItem
 			// 
 			this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripTextBox1});
+            this.loginToDatabaseToolStripMenuItem});
 			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
 			this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
 			this.settingsToolStripMenuItem.Text = "Settings";
 			// 
-			// toolStripMenuItem1
+			// loginToDatabaseToolStripMenuItem
 			// 
-			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-			this.toolStripMenuItem1.Text = "toolStripMenuItem1";
-			// 
-			// toolStripTextBox1
-			// 
-			this.toolStripTextBox1.Name = "toolStripTextBox1";
-			this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+			this.loginToDatabaseToolStripMenuItem.Name = "loginToDatabaseToolStripMenuItem";
+			this.loginToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+			this.loginToDatabaseToolStripMenuItem.Text = "Login to Database";
 			// 
 			// toolStripSeparator1
 			// 
@@ -300,15 +337,15 @@
 			// 
 			// cbQuestionList
 			// 
-			this.cbQuestionList.FormattingEnabled = true;
-			this.cbQuestionList.Items.AddRange(new object[] {
+			this.cbQuestionNumberDropDownList.FormattingEnabled = true;
+			this.cbQuestionNumberDropDownList.Items.AddRange(new object[] {
             "1"});
-			this.cbQuestionList.Location = new System.Drawing.Point(104, 116);
-			this.cbQuestionList.Name = "cbQuestionList";
-			this.cbQuestionList.Size = new System.Drawing.Size(78, 21);
-			this.cbQuestionList.TabIndex = 17;
-			this.cbQuestionList.Text = "1";
-			this.cbQuestionList.SelectedIndexChanged += new System.EventHandler(this.cbQuestionList_SelectedIndexChanged);
+			this.cbQuestionNumberDropDownList.Location = new System.Drawing.Point(104, 116);
+			this.cbQuestionNumberDropDownList.Name = "cbQuestionList";
+			this.cbQuestionNumberDropDownList.Size = new System.Drawing.Size(78, 21);
+			this.cbQuestionNumberDropDownList.TabIndex = 17;
+			this.cbQuestionNumberDropDownList.Text = "1";
+			this.cbQuestionNumberDropDownList.SelectedIndexChanged += new System.EventHandler(this.cbQuestionList_SelectedIndexChanged);
 			// 
 			// label1
 			// 
@@ -443,23 +480,6 @@
 			this.trackBar1.Size = new System.Drawing.Size(514, 45);
 			this.trackBar1.TabIndex = 20;
 			// 
-			// exporttxtToolStripMenuItem
-			// 
-			this.exporttxtToolStripMenuItem.Name = "exporttxtToolStripMenuItem";
-			this.exporttxtToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-			this.exporttxtToolStripMenuItem.Text = "Export to *.txt";
-			// 
-			// exportToDatabaseToolStripMenuItem
-			// 
-			this.exportToDatabaseToolStripMenuItem.Name = "exportToDatabaseToolStripMenuItem";
-			this.exportToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-			this.exportToDatabaseToolStripMenuItem.Text = "Export to Database";
-			// 
-			// toolStripSeparator3
-			// 
-			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(169, 6);
-			// 
 			// QuestionEditForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,7 +488,7 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.cbQuestionList);
+			this.Controls.Add(this.cbQuestionNumberDropDownList);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.btnRemove);
 			this.Controls.Add(this.lbTotalQuestions);
@@ -507,10 +527,7 @@
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-		private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.GroupBox gbQuestionKind;
 		private System.Windows.Forms.RadioButton rb1to3;
@@ -523,7 +540,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button btnRemove;
 		private System.Windows.Forms.Button btnAdd;
-		private System.Windows.Forms.ComboBox cbQuestionList;
+		private System.Windows.Forms.ComboBox cbQuestionNumberDropDownList;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.ErrorProvider errorProvider1;
@@ -539,6 +556,11 @@
 		private System.Windows.Forms.ToolStripMenuItem exporttxtToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exportToDatabaseToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+		private System.Windows.Forms.ToolStripMenuItem importFromtxtToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem importFromDatabaseToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+		private System.Windows.Forms.ToolStripMenuItem loginToDatabaseToolStripMenuItem;
 	}
 }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SurveyClient
 {
-	public partial class UserControl1 : UserControl
+	public partial class QYesNoDontKnow : UserControl
 	{
-		public UserControl1()
+		public QYesNoDontKnow()
 		{
 			InitializeComponent();
 		}

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Survey.SharedObjectsClass;
+using static SurveyEditor.SharedObjectsClass;
 
-namespace Survey
+namespace SurveyEditor
 {
-	class QuestionClass
+	public class QuestionClass
 	{
 		private String _questionContent;
 		private Byte _answer;

@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Survey.SharedObjectsClass;
+using static SurveyEditor.SharedObjectsClass;
 
-namespace Survey
+namespace SurveyEditor
 {
 	public partial class QuestionEditForm : Form
 	{
@@ -18,7 +20,7 @@ namespace Survey
 		private List<QuestionClass> _curQuestionList;
 		private QuestionType curQuestionType;
 		private int curIdx; //aktualny numer pytania
-		
+
 		private List<RadioButton> questionTypeList;
 		private String _currentSavedFileName;
 		private String _currentSavedPath;
@@ -34,12 +36,12 @@ namespace Survey
 
 			_mySurvey = SharedObjectsClass.MySurvey;
 			_curQuestionList = _mySurvey.QuestionList;
-			
+
 			questionTypeList = new List<RadioButton>() { rbNoYes, rbNoYesDontkonw, rb1to3, rb1to5, rb1to10, rb1to100 };
 			curIdx = 0;
 			UpdateForm();
 		}
-	
+
 		private void btnPrevQuestion_Click(object sender, EventArgs e)
 		{
 			if (curIdx == 0) { }//MessageBox.Show("This is the First question!");
@@ -54,15 +56,15 @@ namespace Survey
 		{
 			QuestionClass q = new QuestionClass(curQuestionType, rtbQuestionContent.Text, 0);
 			_curQuestionList.Add(q);
-			curIdx=_curQuestionList.Count-1;
+			curIdx = _curQuestionList.Count - 1;
 			rtbQuestionContent.Text = "";
-			cbQuestionList.Items.Add(_curQuestionList.Count);
+			cbQuestionNumberDropDownList.Items.Add(_curQuestionList.Count);
 			UpdateForm();
 		}
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			QuestionClass q = new QuestionClass(curQuestionType, rtbQuestionContent.Text, 0);
-			_curQuestionList[curIdx]=q;
+			_curQuestionList[curIdx] = q;
 			UpdateForm();
 		}
 
@@ -73,7 +75,7 @@ namespace Survey
 				_curQuestionList.RemoveAt(curIdx);
 				if (curIdx == _curQuestionList.Count) curIdx--;
 				UpdateForm();
-				cbQuestionList.Items.RemoveAt(_curQuestionList.Count);
+				cbQuestionNumberDropDownList.Items.RemoveAt(_curQuestionList.Count);
 				UpdateForm();
 			}
 		}
@@ -84,31 +86,35 @@ namespace Survey
 			{
 				//MessageBox.Show("This is teh Last question!");
 			}
-			else {
+			else
+			{
 				curIdx++;
 				UpdateForm();
 			}
 		}
 
-		void UpdateForm() {
+		
+
+		void UpdateForm()
+		{
 			lbTotalQuestions.Text = _curQuestionList.Count.ToString();
 			QuestionClass curQ = _curQuestionList.ElementAt(curIdx);
 			rtbQuestionContent.Text = curQ.Content;
 			RadioButton rb = questionTypeList.ElementAt((int)curQ.Type);
 			rb.Checked = true;
-			cbQuestionList.SelectedItem = curIdx + 1;
+			cbQuestionNumberDropDownList.SelectedItem = curIdx + 1;
 		}
 
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			RadioButton s = sender as RadioButton;
-			curQuestionType = (QuestionType) questionTypeList.IndexOf(s);
+			curQuestionType = (QuestionType)questionTypeList.IndexOf(s);
 			//label1.Text = type.ToString();
 		}
 
 		private void cbQuestionList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			curIdx = ((int)cbQuestionList.SelectedItem)-1;
+			curIdx = ((int)cbQuestionNumberDropDownList.SelectedItem) - 1;
 			UpdateForm();
 		}
 
@@ -136,8 +142,8 @@ namespace Survey
 			{
 				rb.Checked = false;
 			}
-			cbQuestionList.Items.Clear();
-			cbQuestionList.Text = "1";
+			cbQuestionNumberDropDownList.Items.Clear();
+			cbQuestionNumberDropDownList.Text = "1";
 			lbTotalQuestions.Text = "0";
 		}
 
@@ -203,5 +209,26 @@ namespace Survey
 			}
 		}
 
+		private void exporttxtToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SharedObjectsClass.ShowSomeday();
+		}
+
+		private void exportToDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SharedObjectsClass.ShowSomeday();
+		}
+
+		private void importFromDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SharedObjectsClass.ShowSomeday();
+		}
+
+		private void importFromtxtToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			SharedObjectsClass.ShowSomeday();
+		}
 	}
 }
+
+

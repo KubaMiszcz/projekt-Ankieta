@@ -139,6 +139,9 @@ namespace SurveyEditor
 
 		private void NewStripMenuItem2_Click(object sender, EventArgs e)
 		{
+			_currentSavedFileName = null;
+			_title = "Survey Editor " + Assembly.GetEntryAssembly().GetName().Version;
+			this.Text = _title;
 			SharedObjectsClass.MySurvey = new SurveyClass();
 			_mySurvey = SharedObjectsClass.MySurvey;
 			_curQuestionList = _mySurvey.QuestionList;

@@ -28,11 +28,7 @@ namespace SurveyClient
 		{
 			saveFileDialog1.Filter = "Survey files (*.srv)|*.srv";
 			saveFileDialog1.FilterIndex = 1;
-			saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\MyAnsweredSurveys"; //zrob podkatalog jakis
-			if (!Directory.Exists(saveFileDialog1.InitialDirectory))
-			{
-				Directory.CreateDirectory(saveFileDialog1.InitialDirectory);
-			}
+			saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory(); //zrob podkatalog jakis
 			saveFileDialog1.RestoreDirectory = true;
 			saveFileDialog1.DefaultExt = ".srv";
 			saveFileDialog1.FileName = "Survey1"; //dodaj date albo jakis ciag
@@ -57,7 +53,7 @@ namespace SurveyClient
 			}
 			else
 			{
-				FileStream myStream = new FileStream(_currentSavedFileName + ".srv", FileMode.Create);
+				FileStream myStream = new FileStream(_currentSavedPath+"\\"+ _currentSavedFileName + ".srv", FileMode.Create);
 				ZapiszDoPliku(myStream);
 			}
 		}
@@ -89,6 +85,7 @@ namespace SurveyClient
 			//openFileDialog1.InitialDirectory = "c:\\";
 			openFileDialog1.Filter = "Survey files (*.srv)|*.srv";
 			openFileDialog1.FilterIndex = 1;
+			openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory(); //zrob podkatalog jakis
 			openFileDialog1.RestoreDirectory = true;
 
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)

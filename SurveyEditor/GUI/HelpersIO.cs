@@ -26,7 +26,11 @@ namespace SurveyEditor
 		{
 			saveFileDialog1.Filter = "Survey files (*.srv)|*.srv";
 			saveFileDialog1.FilterIndex = 1;
-			saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory(); //zrob podkatalog jakis
+			saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory()+"\\MySurveys"; //zrob podkatalog jakis
+			if (!Directory.Exists(saveFileDialog1.InitialDirectory))
+			{
+				Directory.CreateDirectory(saveFileDialog1.InitialDirectory);
+			}
 			saveFileDialog1.RestoreDirectory = true;
 			saveFileDialog1.DefaultExt = ".srv";
 			saveFileDialog1.FileName = "Survey1"; //dodaj date albo jakis ciag
@@ -107,6 +111,8 @@ namespace SurveyEditor
 							}
 							myStream.Close();
 
+							tbAuthor.Text = _mySurvey.Author;
+							rtbSubject.Text = _mySurvey.SurveyDescription;
 							curIdx = 0;
 							int i = 1;
 							cbQuestionNumberDropDownList.Items.Clear();

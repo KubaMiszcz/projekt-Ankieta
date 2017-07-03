@@ -55,11 +55,14 @@
     <Compile Include="GUI\HelpersIO.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuestionControls\MySlider.cs">
+    <Compile Include="QuestionControls\MyControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuestionControls\MySlider.Designer.cs">
-      <DependentUpon>MySlider.cs</DependentUpon>
+    <Compile Include="QuestionControls\Q1to100.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuestionControls\Q1to100.Designer.cs">
+      <DependentUpon>Q1to100.cs</DependentUpon>
     </Compile>
     <Compile Include="QuestionControls\Q1to5.cs">
       <SubType>UserControl</SubType>
@@ -78,12 +81,6 @@
     </Compile>
     <Compile Include="QuestionControls\QYesNoDontKnow.Designer.cs">
       <DependentUpon>QYesNoDontKnow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\StartForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\StartForm.Designer.cs">
-      <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,8 +102,11 @@
     <Compile Include="QuestionControls\Q1to3.Designer.cs">
       <DependentUpon>Q1to3.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuestionControls\MySlider.resx">
-      <DependentUpon>MySlider.cs</DependentUpon>
+    <EmbeddedResource Include="QuestionControls\MyControl1.resx">
+      <DependentUpon>MyControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionControls\Q1to100.resx">
+      <DependentUpon>Q1to100.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuestionForm.resx">
       <DependentUpon>QuestionForm.cs</DependentUpon>
@@ -129,9 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuestionControls\QYesNoDontKnow.resx">
       <DependentUpon>QYesNoDontKnow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\StartForm.resx">
-      <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuestionControls\Q1to10.resx">
       <DependentUpon>Q1to10.cs</DependentUpon>

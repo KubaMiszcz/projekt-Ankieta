@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -35,36 +36,46 @@ namespace SurveyEditor
 			_title = "Survey Editor " + Assembly.GetEntryAssembly().GetName().Version;
 
 			_mySurvey = SharedObjectsClass.MySurvey;
+			_mySurvey.Author = tbAuthor.Text;
+			_mySurvey.SurveyDescription = rtbSubject.Text;
 			_curQuestionList = _mySurvey.QuestionList;
 
-			questionTypeList = new List<RadioButton>() { rbNoYes, rbNoYesDontkonw, rb1to3, rb1to5, rb1to10, rb1to100 };
+			questionTypeList = new List<RadioButton>() { new RadioButton(), rbNoYes, rbNoYesDontkonw, rb1to3, rb1to5, rb1to10, rb1to100 }; //first is dummy
 			curIdx = 0;
+			cbQuestionNumberDropDownList.Items.Clear();
+			//cbQuestionNumberDropDownList.Items.Add("new");
 			UpdateForm();
 		}
 
 		private void btnPrevQuestion_Click(object sender, EventArgs e)
 		{
-			if (curIdx == 0) { }//MessageBox.Show("This is the First question!");
-			else
+			if (curIdx > 0)
 			{
 				curIdx--;
-				UpdateForm();
+				//MessageBox.Show("This is the First question!");
 			}
+			UpdateForm();
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
-			QuestionClass q = new QuestionClass(curQuestionType, rtbQuestionContent.Text, 0);
+			QuestionClass q = new QuestionClass(curQuestionType, rtbQuestionContent.Text, "");
 			_curQuestionList.Add(q);
 			curIdx = _curQuestionList.Count - 1;
-			rtbQuestionContent.Text = "";
 			cbQuestionNumberDropDownList.Items.Add(_curQuestionList.Count);
 			UpdateForm();
+			rtbQuestionContent.Text = "";
+			foreach (RadioButton rb in questionTypeList)
+			{
+				rb.Checked = false;
+			}
 		}
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			QuestionClass q = new QuestionClass(curQuestionType, rtbQuestionContent.Text, 0);
-			_curQuestionList[curIdx] = q;
+			QuestionClass q = new QuestionClass(curQuestionType, rtbQuestionContent.Text, "");
+			if (_curQuestionList.Count < 1)
+				_curQuestionList.Add(q);
+			else _curQuestionList[curIdx] = q;
 			UpdateForm();
 		}
 
@@ -82,34 +93,32 @@ namespace SurveyEditor
 
 		private void btnNextQuestion_Click(object sender, EventArgs e)
 		{
-			if (curIdx >= _curQuestionList.Count - 1)
-			{
-				//MessageBox.Show("This is teh Last question!");
-			}
-			else
+			if (curIdx < _curQuestionList.Count - 1)    //
 			{
 				curIdx++;
-				UpdateForm();
+				//MessageBox.Show("This is teh Last question!");
 			}
+			UpdateForm();
 		}
-
-		
 
 		void UpdateForm()
 		{
-			lbTotalQuestions.Text = _curQuestionList.Count.ToString();
-			QuestionClass curQ = _curQuestionList.ElementAt(curIdx);
-			rtbQuestionContent.Text = curQ.Content;
-			RadioButton rb = questionTypeList.ElementAt((int)curQ.Type);
-			rb.Checked = true;
-			cbQuestionNumberDropDownList.SelectedItem = curIdx + 1;
+			if (_curQuestionList.Count > 0)
+			{
+				lbTotalQuestions.Text = _curQuestionList.Count.ToString();
+				QuestionClass curQ = _curQuestionList.ElementAt(curIdx);
+				rtbQuestionContent.Text = curQ.Content;
+				RadioButton rb = questionTypeList.ElementAt((int)curQ.Type);
+				rb.Checked = true;
+				cbQuestionNumberDropDownList.SelectedItem = curIdx + 1;
+			}
 		}
 
 		private void radioButton1_CheckedChanged(object sender, EventArgs e)
 		{
 			RadioButton s = sender as RadioButton;
 			curQuestionType = (QuestionType)questionTypeList.IndexOf(s);
-			//label1.Text = type.ToString();
+			Debug.WriteLine(curQuestionType.ToString());
 		}
 
 		private void cbQuestionList_SelectedIndexChanged(object sender, EventArgs e)

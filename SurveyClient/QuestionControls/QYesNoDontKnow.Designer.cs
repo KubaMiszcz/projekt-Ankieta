@@ -42,6 +42,7 @@
 			this.button3.TabIndex = 0;
 			this.button3.Text = "Yes";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button2
 			// 
@@ -52,6 +53,7 @@
 			this.button2.TabIndex = 0;
 			this.button2.Text = "I don\'t know";
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button1
 			// 
@@ -62,15 +64,16 @@
 			this.button1.TabIndex = 0;
 			this.button1.Text = "No";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// QYesNo
+			// QYesNoDontKnow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
-			this.Name = "QYesNo";
+			this.Name = "QYesNoDontKnow";
 			this.Size = new System.Drawing.Size(561, 56);
 			this.ResumeLayout(false);
 

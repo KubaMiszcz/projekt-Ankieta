@@ -30,14 +30,11 @@
 		{
 			this.gbQuestion = new System.Windows.Forms.GroupBox();
 			this.panelQuestion = new System.Windows.Forms.Panel();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.trackBar1 = new System.Windows.Forms.TrackBar();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.qYesNo1 = new SurveyClient.QYesNo();
+			this.rtbQuestionContent = new System.Windows.Forms.RichTextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
+			this.lbTotalQuestions = new System.Windows.Forms.Label();
+			this.lbCurrentQuestionNum = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,31 +50,27 @@
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.loginToDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.button4 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.btnNextQuestion = new System.Windows.Forms.Button();
+			this.btnPrevQuestion = new System.Windows.Forms.Button();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.qYesNo1 = new SurveyClient.QYesNo();
+			this.label1 = new System.Windows.Forms.Label();
+			this.lbCurAnswer = new System.Windows.Forms.Label();
 			this.gbQuestion.SuspendLayout();
 			this.panelQuestion.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// gbQuestion
 			// 
 			this.gbQuestion.Controls.Add(this.panelQuestion);
-			this.gbQuestion.Controls.Add(this.label3);
-			this.gbQuestion.Controls.Add(this.label2);
-			this.gbQuestion.Controls.Add(this.label1);
-			this.gbQuestion.Controls.Add(this.trackBar1);
-			this.gbQuestion.Controls.Add(this.richTextBox1);
+			this.gbQuestion.Controls.Add(this.rtbQuestionContent);
 			this.gbQuestion.Location = new System.Drawing.Point(11, 64);
 			this.gbQuestion.Name = "gbQuestion";
-			this.gbQuestion.Size = new System.Drawing.Size(566, 256);
+			this.gbQuestion.Size = new System.Drawing.Size(566, 180);
 			this.gbQuestion.TabIndex = 2;
 			this.gbQuestion.TabStop = false;
-			this.gbQuestion.Text = "groupBox1";
+			this.gbQuestion.Text = "Question Content";
 			// 
 			// panelQuestion
 			// 
@@ -88,53 +81,23 @@
 			this.panelQuestion.Size = new System.Drawing.Size(561, 56);
 			this.panelQuestion.TabIndex = 6;
 			// 
-			// label3
+			// qYesNo1
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label3.Location = new System.Drawing.Point(226, 222);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(66, 24);
-			this.label3.TabIndex = 5;
-			this.label3.Text = "label1";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.qYesNo1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.qYesNo1.Location = new System.Drawing.Point(0, 0);
+			this.qYesNo1.Name = "qYesNo1";
+			this.qYesNo1.Size = new System.Drawing.Size(561, 56);
+			this.qYesNo1.TabIndex = 0;
+			this.qYesNo1.Load += new System.EventHandler(this.qYesNo1_Load);
 			// 
-			// label2
+			// rtbQuestionContent
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label2.Location = new System.Drawing.Point(500, 222);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(60, 24);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "label1";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label1.Location = new System.Drawing.Point(6, 222);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(60, 24);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "label1";
-			// 
-			// trackBar1
-			// 
-			this.trackBar1.Location = new System.Drawing.Point(7, 181);
-			this.trackBar1.Name = "trackBar1";
-			this.trackBar1.Size = new System.Drawing.Size(553, 45);
-			this.trackBar1.TabIndex = 4;
-			// 
-			// richTextBox1
-			// 
-			this.richTextBox1.Location = new System.Drawing.Point(6, 19);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.ReadOnly = true;
-			this.richTextBox1.Size = new System.Drawing.Size(554, 92);
-			this.richTextBox1.TabIndex = 2;
-			this.richTextBox1.Text = "";
+			this.rtbQuestionContent.Location = new System.Drawing.Point(6, 19);
+			this.rtbQuestionContent.Name = "rtbQuestionContent";
+			this.rtbQuestionContent.ReadOnly = true;
+			this.rtbQuestionContent.Size = new System.Drawing.Size(554, 92);
+			this.rtbQuestionContent.TabIndex = 2;
+			this.rtbQuestionContent.Text = "";
 			// 
 			// label4
 			// 
@@ -145,23 +108,23 @@
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Current Question:";
 			// 
-			// label5
+			// lbTotalQuestions
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(542, 35);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(24, 13);
-			this.label5.TabIndex = 3;
-			this.label5.Text = "n/a";
+			this.lbTotalQuestions.AutoSize = true;
+			this.lbTotalQuestions.Location = new System.Drawing.Point(542, 35);
+			this.lbTotalQuestions.Name = "lbTotalQuestions";
+			this.lbTotalQuestions.Size = new System.Drawing.Size(24, 13);
+			this.lbTotalQuestions.TabIndex = 3;
+			this.lbTotalQuestions.Text = "n/a";
 			// 
-			// label6
+			// lbCurrentQuestionNum
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(97, 35);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(24, 13);
-			this.label6.TabIndex = 3;
-			this.label6.Text = "n/a";
+			this.lbCurrentQuestionNum.AutoSize = true;
+			this.lbCurrentQuestionNum.Location = new System.Drawing.Point(97, 35);
+			this.lbCurrentQuestionNum.Name = "lbCurrentQuestionNum";
+			this.lbCurrentQuestionNum.Size = new System.Drawing.Size(24, 13);
+			this.lbCurrentQuestionNum.TabIndex = 3;
+			this.lbCurrentQuestionNum.Text = "n/a";
 			// 
 			// label7
 			// 
@@ -212,12 +175,14 @@
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
 			this.saveToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.saveToolStripMenuItem.Text = "Save";
+			this.saveToolStripMenuItem.Click += new System.EventHandler(this.zapiszToolStripMenuItem_Click);
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
 			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
 			this.saveAsToolStripMenuItem.Text = "Save As...";
+			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.zapiszJakoToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator3
 			// 
@@ -273,60 +238,76 @@
 			this.loginToDatabaseToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
 			this.loginToDatabaseToolStripMenuItem.Text = "Login to Database";
 			// 
-			// button4
+			// btnNextQuestion
 			// 
-			this.button4.BackgroundImage = global::SurveyClient.Properties.Resources.Button_Next_icon;
-			this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button4.Location = new System.Drawing.Point(428, 326);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(149, 71);
-			this.button4.TabIndex = 0;
-			this.button4.UseVisualStyleBackColor = true;
+			this.btnNextQuestion.BackgroundImage = global::SurveyClient.Properties.Resources.Button_Next_icon;
+			this.btnNextQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btnNextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.btnNextQuestion.Location = new System.Drawing.Point(428, 250);
+			this.btnNextQuestion.Name = "btnNextQuestion";
+			this.btnNextQuestion.Size = new System.Drawing.Size(149, 71);
+			this.btnNextQuestion.TabIndex = 0;
+			this.btnNextQuestion.UseVisualStyleBackColor = true;
+			this.btnNextQuestion.Click += new System.EventHandler(this.btnNextQuestion_Click);
 			// 
-			// button3
+			// btnPrevQuestion
 			// 
-			this.button3.BackgroundImage = global::SurveyClient.Properties.Resources.Button_Previous_icon;
-			this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button3.Location = new System.Drawing.Point(11, 326);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(149, 71);
-			this.button3.TabIndex = 0;
-			this.button3.UseVisualStyleBackColor = true;
+			this.btnPrevQuestion.BackgroundImage = global::SurveyClient.Properties.Resources.Button_Previous_icon;
+			this.btnPrevQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btnPrevQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.btnPrevQuestion.Location = new System.Drawing.Point(11, 250);
+			this.btnPrevQuestion.Name = "btnPrevQuestion";
+			this.btnPrevQuestion.Size = new System.Drawing.Size(149, 71);
+			this.btnPrevQuestion.TabIndex = 0;
+			this.btnPrevQuestion.UseVisualStyleBackColor = true;
+			this.btnPrevQuestion.Click += new System.EventHandler(this.btnPrevQuestion_Click);
 			// 
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
-			// qYesNo1
+			// label1
 			// 
-			this.qYesNo1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.qYesNo1.Location = new System.Drawing.Point(0, 0);
-			this.qYesNo1.Name = "qYesNo1";
-			this.qYesNo1.Size = new System.Drawing.Size(561, 56);
-			this.qYesNo1.TabIndex = 0;
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(252, 250);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(82, 13);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "Current Answer:";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lbCurAnswer
+			// 
+			this.lbCurAnswer.AutoSize = true;
+			this.lbCurAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.lbCurAnswer.Location = new System.Drawing.Point(258, 269);
+			this.lbCurAnswer.Name = "lbCurAnswer";
+			this.lbCurAnswer.Size = new System.Drawing.Size(66, 33);
+			this.lbCurAnswer.TabIndex = 12;
+			this.lbCurAnswer.Text = "N/A";
+			this.lbCurAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbCurAnswer.TextChanged += new System.EventHandler(this.lbCurAnswer_TextChanged);
 			// 
 			// QuestionForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(585, 404);
+			this.ClientSize = new System.Drawing.Size(585, 331);
+			this.Controls.Add(this.lbCurAnswer);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.menuStrip1);
-			this.Controls.Add(this.label5);
+			this.Controls.Add(this.lbTotalQuestions);
 			this.Controls.Add(this.label7);
-			this.Controls.Add(this.label6);
+			this.Controls.Add(this.lbCurrentQuestionNum);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.gbQuestion);
-			this.Controls.Add(this.button4);
-			this.Controls.Add(this.button3);
+			this.Controls.Add(this.btnNextQuestion);
+			this.Controls.Add(this.btnPrevQuestion);
 			this.Name = "QuestionForm";
 			this.Text = "QuestionForm";
 			this.Load += new System.EventHandler(this.QuestionForm_Load);
 			this.gbQuestion.ResumeLayout(false);
-			this.gbQuestion.PerformLayout();
 			this.panelQuestion.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
@@ -336,16 +317,12 @@
 
 		#endregion
 		private System.Windows.Forms.GroupBox gbQuestion;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.RichTextBox richTextBox1;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TrackBar trackBar1;
+		private System.Windows.Forms.Button btnPrevQuestion;
+		private System.Windows.Forms.Button btnNextQuestion;
+		private System.Windows.Forms.RichTextBox rtbQuestionContent;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label lbTotalQuestions;
+		private System.Windows.Forms.Label lbCurrentQuestionNum;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -365,5 +342,7 @@
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private QYesNo qYesNo1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lbCurAnswer;
 	}
 }

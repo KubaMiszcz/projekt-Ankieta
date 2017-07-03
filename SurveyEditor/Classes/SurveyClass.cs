@@ -18,7 +18,7 @@ namespace SurveyEditor
 			QuestionList = new List<QuestionClass>();
 		}
 
-		public void AddQuestion(QuestionType type, String content, Byte answer)
+		public void AddQuestion(QuestionType type, String content, String answer)
 		{
 			QuestionClass q = new QuestionClass(type, content, answer);
 			QuestionList.Add(q);

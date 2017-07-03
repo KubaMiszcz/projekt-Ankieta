@@ -12,7 +12,7 @@ namespace SurveyEditor
 		public static SurveyClass MySurvey;
 		public enum QuestionType
 		{
-			NoYes=0,
+			NoYes=1,
 			NoYesDontKnow,
 			Num1To3,
 			Num1To5,

@@ -322,9 +322,9 @@
 			this.lbTotalQuestions.AutoSize = true;
 			this.lbTotalQuestions.Location = new System.Drawing.Point(313, 119);
 			this.lbTotalQuestions.Name = "lbTotalQuestions";
-			this.lbTotalQuestions.Size = new System.Drawing.Size(35, 13);
+			this.lbTotalQuestions.Size = new System.Drawing.Size(24, 13);
 			this.lbTotalQuestions.TabIndex = 14;
-			this.lbTotalQuestions.Text = "label1";
+			this.lbTotalQuestions.Text = "n/a";
 			// 
 			// label3
 			// 
@@ -335,16 +335,16 @@
 			this.label3.TabIndex = 13;
 			this.label3.Text = "Total Questions:";
 			// 
-			// cbQuestionList
+			// cbQuestionNumberDropDownList
 			// 
 			this.cbQuestionNumberDropDownList.FormattingEnabled = true;
 			this.cbQuestionNumberDropDownList.Items.AddRange(new object[] {
             "1"});
 			this.cbQuestionNumberDropDownList.Location = new System.Drawing.Point(104, 116);
-			this.cbQuestionNumberDropDownList.Name = "cbQuestionList";
+			this.cbQuestionNumberDropDownList.Name = "cbQuestionNumberDropDownList";
 			this.cbQuestionNumberDropDownList.Size = new System.Drawing.Size(78, 21);
 			this.cbQuestionNumberDropDownList.TabIndex = 17;
-			this.cbQuestionNumberDropDownList.Text = "1";
+			this.cbQuestionNumberDropDownList.Text = "n/a";
 			this.cbQuestionNumberDropDownList.SelectedIndexChanged += new System.EventHandler(this.cbQuestionList_SelectedIndexChanged);
 			// 
 			// label1
@@ -479,6 +479,7 @@
 			this.trackBar1.Name = "trackBar1";
 			this.trackBar1.Size = new System.Drawing.Size(514, 45);
 			this.trackBar1.TabIndex = 20;
+			this.trackBar1.Visible = false;
 			// 
 			// QuestionEditForm
 			// 

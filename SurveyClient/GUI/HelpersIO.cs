@@ -28,7 +28,11 @@ namespace SurveyClient
 		{
 			saveFileDialog1.Filter = "Survey files (*.srv)|*.srv";
 			saveFileDialog1.FilterIndex = 1;
-			saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory(); //zrob podkatalog jakis
+			saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\MyAnsweredSurveys"; //zrob podkatalog jakis
+			if (!Directory.Exists(saveFileDialog1.InitialDirectory))
+			{
+				Directory.CreateDirectory(saveFileDialog1.InitialDirectory);
+			}
 			saveFileDialog1.RestoreDirectory = true;
 			saveFileDialog1.DefaultExt = ".srv";
 			saveFileDialog1.FileName = "Survey1"; //dodaj date albo jakis ciag
@@ -106,7 +110,7 @@ namespace SurveyClient
 							myStream.Close();
 
 							curIdx = 0;
-							int i = 1;
+							//int i = 1;
 							//cbQuestionNumberDropDownList.Items.Clear();
 							//foreach (var q in _curQuestionList)
 							//{
@@ -118,6 +122,7 @@ namespace SurveyClient
 							_currentSavedPath = Path.GetDirectoryName(openFileDialog1.FileName);
 							_currentSavedFileName = Path.GetFileNameWithoutExtension(openFileDialog1.FileName);
 							this.Text = _title + " - " + _currentSavedFileName;
+							UpdateForm();
 						}
 					}
 				}
@@ -127,6 +132,7 @@ namespace SurveyClient
 				}
 			}
 		}
+
 		private void closeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Application.Exit();

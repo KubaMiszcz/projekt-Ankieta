@@ -9,44 +9,50 @@ namespace SurveyEditor
 {
 	public class QuestionClass
 	{
+		//private uint _questionID;
 		private String _questionContent;
-		private Byte _answer;
-		private QuestionType _questionType;
-		private String _qquestionType;
+		private String _answerValue;
+		private QuestionType _questionTypeCode;	//enum
+		private String _questionTypeDesc;
 
+		//public uint questionID
+		//{
+		//	get { return _questionID; }
+		//	set { _questionID = value; }
+		//}
 		public String Content
 		{
 			get { return _questionContent; }
 			set { _questionContent = value; }
 		}
-		public Byte Answer
+		public String AnswerValue
 		{
-			get { return _answer; }
-			set { _answer = value; }
+			get { return _answerValue; }
+			set { _answerValue = value; }
 		}
 		public QuestionType Type
 		{
-			get { return _questionType; }
-			set { _questionType = value; }
+			get { return _questionTypeCode; }
+			set { _questionTypeCode = value; }
 		}
 
 		public String TypeDescription
 		{
-			get { return _questionType.ToString(); }
-			set { _qquestionType = value; }
+			get { return _questionTypeCode.ToString(); }
+			set { _questionTypeDesc = value; }
 		}
 
 		public QuestionClass()
 		{
-			_questionType = QuestionType.NoYes;
+			_questionTypeCode = QuestionType.NoYes;
 			_questionContent = "";
-			_answer = 0;
+			_answerValue = "";
 		}
-		public QuestionClass(QuestionType type, String content, Byte answer)
+		public QuestionClass(QuestionType type, String content, String answer)
 		{
-			_questionType = type;
+			_questionTypeCode = type;
 			_questionContent = content;
-			_answer = 0;    //domsylna odpowiedz na razie 0			
+			_answerValue = "";    //domsylna odpowiedz na razie 0			
 		}
 	}
 }

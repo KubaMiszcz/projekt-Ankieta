@@ -1,0 +1,60 @@
+﻿{
+  "Author": "",
+  "SurveyDescription": "",
+  "QuestionList": [
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    },
+    {
+      "Content": "",
+      "AnswerValue": "",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    }
+  ]
+}

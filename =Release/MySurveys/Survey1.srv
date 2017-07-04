@@ -1,0 +1,42 @@
+﻿{
+  "Author": "Krasnal Hałabała",
+  "SurveyDescription": "hebebe\npo dwakroc",
+  "QuestionList": [
+    {
+      "Content": "111",
+      "AnswerValue": "Yes",
+      "Type": 1,
+      "TypeDescription": "NoYes"
+    },
+    {
+      "Content": "222",
+      "AnswerValue": "Yes",
+      "Type": 2,
+      "TypeDescription": "NoYesDontKnow"
+    },
+    {
+      "Content": "333",
+      "AnswerValue": "3",
+      "Type": 3,
+      "TypeDescription": "Num1To3"
+    },
+    {
+      "Content": "444",
+      "AnswerValue": "5",
+      "Type": 4,
+      "TypeDescription": "Num1To5"
+    },
+    {
+      "Content": "555",
+      "AnswerValue": "10",
+      "Type": 5,
+      "TypeDescription": "Num1To10"
+    },
+    {
+      "Content": "666",
+      "AnswerValue": "75",
+      "Type": 6,
+      "TypeDescription": "Num1To100"
+    }
+  ]
+}

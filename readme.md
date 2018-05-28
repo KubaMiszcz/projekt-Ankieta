@@ -1,5 +1,7 @@
-==Survey Editor
+# App for Polls
+editor for setting up poll, and Client for fulfill it
 
+==Survey Editor
 
 
 ==SurveyClient
@@ -20,9 +22,9 @@ ogarnac idee jak dopisywac dane z klienta do ankiety
 
 
 Mazurek: 
-Proszê eksportowaæ dane do bazy MySQL
+ProszÄ™ eksportowaÄ‡ dane do bazy MySQL
  
-Proszê skorzystaæ z gotowych bibliotek:
+ProszÄ™ skorzystaÄ‡ z gotowych bibliotek:
  
 https://sourceforge.net/projects/quexf/?source=directory
  
